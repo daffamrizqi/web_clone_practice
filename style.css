@@ -1,0 +1,158 @@
+/* 
+    css variable (custom properties)
+*/
+:root {
+  --primary-color: #e50914;
+}
+
+/* reset for everything */
+* {
+  /* 
+    The CSS box-sizing property allows us to include the padding and border in an element's total width and height.
+    so padding dont affect width or anything
+  */
+  box-sizing: border-box;
+  /* take of the margin and padding from everything */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Arial", "sans-serif";
+  /* anti-alias : teknik untuk menghilangkan jaggies (agar pixel terlihat lebih mulus */
+  -webkit-font-smoothing: antialiased;
+  background: black;
+  color: #999;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+a {
+  color: white;
+  /* get id of underline in a tag */
+  text-decoration: none;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+img {
+  width: 100%;
+}
+
+.showcase {
+  width: 100%;
+  /* height: viewport heigth agar ada sedikit ruang untuk bagian bawah window*/
+  height: 93vh;
+  position: relative;
+  /* no-repeat: menampilkan gambar single / tidak diulang */
+  background: url("https://i.ibb.co/vXqDmnh/background.jpg") no-repeat center
+    center/cover;
+}
+
+.showcase::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: inset 100px 100px 250px black;
+}
+
+.showcase-top {
+  position: relative;
+  z-index: 2;
+  height: 90px;
+}
+
+.showcase-top img {
+  width: 180px;
+  height: 45px;
+  position: absolute;
+  top: 35%;
+  left: 4.3%;
+}
+
+.showcase-top a {
+  position: absolute;
+  top: 35%;
+  right: 4.3%;
+}
+
+.showcase-content {
+  z-index: 2;
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.showcase-content h1 {
+  font-weight: 700;
+  font-size: 5.2rem;
+  line-height: 1.1;
+  margin-bottom: 0 0 2rem;
+}
+
+.showcase-content p {
+  color: white;
+  font-weight: 400;
+  font-size: 1.9rem;
+  line-height: 1.25;
+  margin: 0 0 2rem;
+}
+
+/* utility Buttons */
+.btn {
+  /* btn adalah inline-block elemen */
+  /* allows to set a width and height properties on the element */
+  display: inline-block;
+  background: var(--primary-color);
+  color: white;
+  /* atas bawah 0.4rem kanan kiri 1.3rem */
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  text-align: center;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0, 1px, 0 rgba(0, 0, 0, 0.45);
+}
+
+.btn:hover {
+  /* opacity: transparansi */
+  opacity: 0.9;
+}
+
+.btn-rounded {
+  border-radius: 5px;
+}
+
+.btn-xl {
+  font-size: 2rem;
+  padding: 1.2rem 2.1rem;
+  /* mengubah text menjadi uppercase */
+  text-transform: uppercase;
+}
